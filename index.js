@@ -8,6 +8,8 @@ c.fillRect(0, 0, canvas.width, canvas.height)
 
 const gravity = 0.7
 
+
+
 class Sprite{
     constructor({position, velocity, color = 'red', offset}) {
         this.position = position 
@@ -27,16 +29,19 @@ class Sprite{
         this.color = color
         this.isAttacking 
         this.health = 100
+        
     }
     draw(){
 
         c.fillStyle = this.color
         c.fillRect(this.position.x, this.position.y, this.width, this.height)
     
+                
         // Attack Box
         if(this.isAttacking){
             c.fillStyle = 'green'
-            c.fillRect(this.attackBox.position.x, this.attackBox.position.y,this.attackBox.height, this.attackBox.width)
+            c.fillRect(this.attackBox.position.x, this.attackBox.position.y,this.attackBox.height, this.attackBox.width);
+            
         }
         
     }
@@ -176,6 +181,7 @@ decreaseTimer()
 
 function animate(){
 
+
     window.requestAnimationFrame(animate)
     c.fillStyle = 'black'
     c.fillRect(0, 0, canvas.width, canvas.height)
@@ -265,6 +271,7 @@ window.addEventListener('keydown', (event) =>{
 
         case ' ':
             player.attack()
+            document.getElementById('punch').play();
         break 
 
 //Keys pressed for Enemy
@@ -284,6 +291,7 @@ window.addEventListener('keydown', (event) =>{
 
         case 'ArrowDown':
             enemy.attack()
+            document.getElementById('punch').play();
         break
     }
     console.log(event.key); 
