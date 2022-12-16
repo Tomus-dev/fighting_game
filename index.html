@@ -3,16 +3,75 @@
 <head>
 
     <style>
-        * {
-            box-sizing: border-box;
-        }
+                    * {
+                        box-sizing: border-box;
+                    }
+
+
+
+                            /* Popup container - can be anything you want */
+                    .popup {
+                    position: relative;
+                    display: inline-block;
+                    cursor: pointer;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    }
+
+                    /* The actual popup */
+                    .popup .popuptext {
+                    visibility: hidden;
+                    width: 160px;
+                    background-color: #555;
+                    color: #fff;
+                    text-align: center;
+                    border-radius: 6px;
+                    padding: 8px 0;
+                    position: absolute;
+                    z-index: 1;
+                    bottom: 125%;
+                    left: 50%;
+                    margin-left: -80px;
+                    }
+
+                    /* Popup arrow */
+                    .popup .popuptext::after {
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    margin-left: -5px;
+                    border-width: 5px;
+                    border-style: solid;
+                    border-color: #555 transparent transparent transparent;
+                    }
+
+                    /* Toggle this class - hide and show the popup */
+                    .popup .show {
+                    visibility: visible;
+                    -webkit-animation: fadeIn 1s;
+                    animation: fadeIn 1s;
+                    }
+
+                    /* Add animation (fade in the popup) */
+                    @-webkit-keyframes fadeIn {
+                    from {opacity: 0;} 
+                    to {opacity: 1;}
+                    }
+
+                    @keyframes fadeIn {
+                    from {opacity: 0;}
+                    to {opacity:1 ;}
+                    }
     </style>
 </head>
 
 
 <body> 
     
-    <audio id = "punch" controls style="display:none"> <source src ="C:\Users\tomleitner\fighting_game\kick.wav" type = "audio/wav"></audio>
+    <audio id = "punch" controls style="display:none"> <source src ="/Users/tomleitner/fighting_game/kick.wav" type = "audio/wav"></audio>
     <!--red container div-->
     <div style="position: relative; display: inline-block;">
         <!--smaller red container div-->
@@ -54,10 +113,34 @@
         
     </div>
     
-    
-    
+        
+
     <script src="index.js"></script>
 
+    <div class="popup" onclick="myFunction()">Klicke hier für die Anleitung
+        <span class="popuptext" id="myPopup">
+
+         <div>
+            Spieler 1:
+            <div>w:     springen</div>
+            <div>a:     links</div>
+            <div>d:     rechts</div>
+            <div>leer:  schlagen</div>
+         </div>
+            <div>::::</div>
+            <div>::::</div>
+         <div>
+            Spieler 2:
+            <div>oben:   springen</div>
+            <div>links:  links</div>
+            <div>rechts: rechts</div>
+            <div>unten:  schlagen</div>
+         </div>
+
+         
+
+        </span>
+    </div>
 
 
 </body>

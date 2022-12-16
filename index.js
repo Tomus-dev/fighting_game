@@ -8,7 +8,10 @@ c.fillRect(0, 0, canvas.width, canvas.height)
 
 const gravity = 0.7
 
-
+function myFunction() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+  }
 
 class Sprite{
     constructor({position, velocity, color = 'red', offset}) {
