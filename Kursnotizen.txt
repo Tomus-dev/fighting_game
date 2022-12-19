@@ -4,15 +4,6 @@
 
 Link:   https://chriscourses.com/courses/fighting-game/videos/project-setup
 
-To Do´s
-
-- Project setup
-- Create Player and Enemy
-- Move Character with Event Listeners
-- Attacks
-- Health bar interface
-- Game time and Game over
-
 
 
 Stop bei 5
